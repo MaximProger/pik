@@ -363,6 +363,7 @@ img {
   margin-bottom: 20px;
   img {
     width: 100%;
+    border-radius: 5px;
   }
 }
 
@@ -393,6 +394,10 @@ img {
 
   img {
     z-index: 2;
+    width: 33px;
+    height: 21px;
+    min-width: 33px;
+    min-height: 21px;
   }
 }
 
@@ -417,20 +422,42 @@ img {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  background: url("../img/about/about__bg.png") no-repeat center;
+  // background: url("../img/about/about__bg.png") no-repeat center;
   background-size: cover;
-  height: 400px;
-  max-height: 400px;
+  height: auto;
+  max-height: 100%;
+  border-radius: 10px;
+}
+
+.about__slide__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: $gray;
   border-radius: 10px;
 }
 
 .about__slider {
-  width: 50%;
+  width: 100%;
   position: relative;
-  padding-top: 55px;
-  background: $gray;
-  padding-left: 10px;
+  // padding-top: 55px;
+  // background: $gray;
+  // padding-left: 10px;
   border-radius: 0px 10px 10px 0;
+}
+
+.about__slide__img {
+  width: 50%;
+  display: inline-block !important;
+
+  img {
+    display: inline-block !important;
+  }
+}
+
+.about__slide {
+  width: 50%;
 }
 
 .about__title {
@@ -446,13 +473,14 @@ img {
       margin-bottom: 0;
     }
   }
+  margin-bottom: 80px;
 }
 
 .about__navigation {
   position: absolute;
   bottom: 35px;
-  left: 10px;
-  width: 92%;
+  right: 10%;
+  width: 450px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1243,8 +1271,12 @@ img {
     display: none;
   }
 
-  .about__inner {
-    max-height: 500px;
+  .about__slide__item {
+    flex-direction: column;
+  }
+
+  .about__navigation {
+    right: 30%;
   }
 
   .info__body {
@@ -1346,13 +1378,15 @@ img {
   }
 
   .about__inner {
-    background: url("../img/about/about__bg--mobile.png") no-repeat center;
-    background-size: cover;
-    height: 825px;
-    min-height: 825px;
-    max-height: auto;
-    flex-direction: column;
     padding: 0 10px;
+  }
+
+  .about__slide__img {
+    width: 100%;
+  }
+
+  .about__slide {
+    width: 100%;
   }
 
   .about__slider {
@@ -1363,23 +1397,31 @@ img {
   }
 
   .about__title {
+    margin-top: 20px;
     font-size: 24px;
+    margin-bottom: 20px;
   }
 
   .about__text {
     padding: 0;
+    margin-bottom: 100px;
   }
 
   .about__navigation {
-    position: static;
-    margin-bottom: 50px;
-    margin-top: 40px;
-    width: 100%;
+    width: 90%;
+    position: absolute;
+    width: 90%;
+    bottom: 40px;
+    right: 20px;
   }
 
   .about__dots {
     width: auto;
     max-width: 200px;
+  }
+
+  .about__slide__img {
+    border-radius: 10px 10px 0 0;
   }
 
   .about__dots__item {
