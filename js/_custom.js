@@ -37,7 +37,6 @@ $(document).ready(function () {
     let catalogId = $this.data("catalog");
     $("#catalogTriangle").removeClass().addClass("catalog__triangle");
     $("#catalogTriangle").addClass("" + catalogId.slice(1) + "");
-    // $(".catalog__triangle").attr("id", catalogId);
     $this.addClass("active");
     $(catalogId).addClass("active");
   });
