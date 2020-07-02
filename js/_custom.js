@@ -66,4 +66,12 @@ $(document).ready(function () {
     asNavFor: "#contactSlide",
     focusOnSelect: true,
   });
+
+  // Burger menu
+  $("#nav__toggle").on("click", function (event) {
+    event.preventDefault();
+
+    $(this).toggleClass("active");
+    $(".nav").toggleClass("active");
+  });
 });
