@@ -115,4 +115,70 @@ $(document).ready(function () {
   $(".modal__close").on("click", function () {
     $(".modal__wrapper").removeClass("active");
   });
+
+  // FORM
+  // Tabs
+  $(".forn__section__tab").on("click", function () {
+    $(this).toggleClass("active");
+    $(this)
+      .parent()
+      .parent()
+      .parent()
+      .find(".form__section__body")
+      .toggleClass("hide");
+    $(this)
+      .parent()
+      .parent()
+      .parent()
+      .find(".form__section__header")
+      .toggleClass("active");
+  });
+
+  // Section 2 add line
+  $(".sectionAdd2").on("click", function (event) {
+    event.preventDefault();
+    $(this).parent().parent().find(".form__section__line").removeClass("hide");
+    $(this).addClass("active");
+  });
+
+  // Section 3 add line
+  $(".sectionAdd3").on("click", function (event) {
+    event.preventDefault();
+    $(this).parent().parent().find(".form__group").removeClass("hide");
+    $(this).addClass("active");
+  });
+
+  // Section 4
+  // Add Order
+  $(".form__add__order").on("click", function (event) {
+    event.preventDefault();
+    $(this).parent().parent().find(".form__section__inner").removeClass("hide");
+    $(this).addClass("active");
+  });
+
+  // Add Categories
+  $(".sectionAdd4").on("click", function (event) {
+    event.preventDefault();
+    $(this).parent().parent().find(".form__categories").removeClass("hide");
+    $(this).addClass("active");
+  });
+
+  // Section 5 add line
+  $(".sectionAdd5").on("click", function (event) {
+    event.preventDefault();
+    $(this).parent().parent().find(".form__section__line").removeClass("hide");
+    $(this).addClass("active");
+  });
+
+  // Section 6 add line
+  $(".sectionAdd6").on("click", function (event) {
+    event.preventDefault();
+    $(this).parent().parent().find(".form__section__line").removeClass("hide");
+    $(this).addClass("active");
+  });
+
+  $(".form__type__item").on("click", function () {
+    $(this).parent().find(".form__type__item").removeClass("active");
+    $(this).toggleClass("active");
+  });
 });
