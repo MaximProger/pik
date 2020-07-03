@@ -42,7 +42,7 @@
 								<img src="./img/icons/phone.png" alt="Phone">
 								<span> 8 000 000 00 00</span>
 							</div>
-							<button class="btn header__btn">Вход</button>
+							<button class="btn header__btn" id="loginBtn">Вход</button>
 							<button class="nav-toggle" id="nav__toggle" type="button">
 								<span class="nav-toggle__item">Menu</span>
 							</button>
@@ -73,11 +73,11 @@
 										<a href="#"><img src="./img/icons/camera.png" alt="camera"></a>
 										<a href="#"><img src="./img/icons/proector.svg" alt="proector"></a>
 										<a href="#"><img src="./img/icons/box.svg" alt="box"></a>
-										<a href="#"><img src="./img/icons/person.svg" alt="person"></a>
+										<a href="#" class="openCabinet"><img src="./img/icons/person.svg" alt="person"></a>
 									</div>
 								</div>
 								<div class="intro__head__left">
-									<a class="btn intro__head__btn no-xs" href="#">Кабинет переговоров</a>
+									<a class="btn intro__head__btn openCabinet no-xs" href="#">Кабинет переговоров</a>
 								</div>
 							</div>
 						</div>
@@ -979,21 +979,83 @@
 
 
 	<!-- Modal Windows -->
-	<!-- <div class="modal__wrapper">
+	<div class="modal__wrapper" id="modalLogin">
 		<div class="modal">
 			<div class="modal__head">
-				<a href="#" class="modal__link">Вход</a>
-				<a href="#" class="modal__link">Регистрация</a>
+				<a href="#" class="modal__link active" id="linkLogin">Вход</a>
+				<a href="#" class="modal__link" id="linkRegistr">Регистрация</a>
 			</div>
 			<div class="modal__content">
-				<input type="text" name="loginEnter" class="modal__input" placeholder="Логин">
-				<input type="password" name="passwordEnter" class="modal__input" placeholder="Логин">
+				<div class="modal__content__body active" id="contentLogin">
+					<form>
+						<input type="text" name="login" class="modal__input" placeholder="Логин">
+						<input type="password" name="password" class="modal__input" placeholder="Логин">
+						<button type="submit" class="btn btn--empty modal__btn">Войти</button>
+					</form>
+				</div>
+				<div class="modal__content__body" id="contentRegistration">
+					<form>
+						<input type="text" name="fio" class="modal__input" placeholder="ФИО*" required>
+						<input type="tel" name="phpne" class="modal__input" placeholder="Телефон*" required>
+						<input type="mail" name="email" class="modal__input" placeholder="E-mail*" required>
+						<input type="tel" name="nameFace" class="modal__input" placeholder="Название юридического лица">
+						<div class="modal__checkbox__wrapper">
+							<div class="modal__checkbox__item">
+								<input type="checkbox" class="custom-checkbox" id="urFace" name="urFace" value="yes">
+								<label for="urFace">Юридическое лицо</label>
+							</div>
+
+							<div class="modal__checkbox__item">
+								<input type="checkbox" class="custom-checkbox" id="fizFace" name="fizFace" value="yes">
+								<label for="fizFace">Физическое лицо</label>
+							</div>
+						</div>
+						<button type="submit" class="btn btn--empty modal__btn">Войти</button>
+					</form>
+				</div>
 			</div>
 			<div class="modal__footer">
 				<a href="#" class="modal__forgot">Забыли пароль?</a>
 			</div>
 		</div>
-	</div> -->
+	</div>
+
+	<div class="modal__wrapper" id="modalWarning">
+		<div class="modal modal--warning">
+			<img src="./img/icons/close.svg" class="modal__close" alt="Close" title="Закрыть">
+			<div class="modal__head">
+			</div>
+			<div class="modal__content">
+				<a href="#" class="btn btn--empty modal__btn">Войти в переговорку</a>
+				<p class="modal__warning__text">
+					<img src="./img/icons/warning.svg" alt="Warning">
+					<span>Для входа вам потребуется персональный пароль, который вы можете получить у менеджера через чат
+						поддержки</span>
+				</p>
+			</div>
+			<div class="modal__warning__item">
+				<img src="./img/icons/redicon.png" alt="Warning">
+				<img src="./img/icons/arrow__rotste.svg" alt="Arrow">
+			</div>
+		</div>
+	</div>
+
+	<div class="modal__wrapper" id="modalCabinet">
+		<div class="modal modal--warning">
+			<img src="./img/icons/close.svg" class="modal__close" alt="Close" title="Закрыть">
+			<div class="modal__head">
+			</div>
+			<div class="modal__content">
+				<div class="modal__content__title">Кабинет для переговоров</div>
+				<a href="#" class="btn btn--empty modal__btn">Войти в переговорку</a>
+				<a href="#" class="btn btn--empty modal__btn modal__btn__password">Задать новый пароль</a>
+				<p class="modal__warning__text modal__warning__text--special">
+					<img src="./img/icons/warning.svg" alt="Warning">
+					<span>Не забывайте менять пароль, перед началом новых переговоров</span>
+				</p>
+			</div>
+		</div>
+	</div>
 
 	<!-- jQuery -->
 	<script src="./js/include/jquery.min.js"></script>

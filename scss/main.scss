@@ -1271,6 +1271,20 @@ img {
     display: none;
   }
 
+  // .about__slide__img {
+  //   width: 100%;
+  //   min-width: 100vw;
+
+  //   img {
+  //     min-width: 100vw;
+  //     max-height: 320px;
+  //   }
+  // }
+
+  // .about__slide {
+  //   width: 100%;
+  // }
+
   .about__slide__item {
     flex-direction: column;
   }
@@ -1681,6 +1695,210 @@ img {
   .footer__mail {
     margin-bottom: 50px;
   }
+}
+
+// Modal
+.modal__wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  display: none;
+
+  &.active {
+    display: flex !important;
+  }
+}
+
+.modal {
+  background: $blue;
+  border-radius: 10px;
+  box-shadow: 4px 2px 11px 0px rgba(50, 50, 50, 0.25);
+  padding: 40px 80px;
+  transition: all 0.2s linear;
+  position: relative;
+
+  &--warning {
+    .modal__btn {
+      text-align: center;
+    }
+  }
+}
+
+.modal__close {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  transition: opacity 0.2s linear;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.modal__content {
+  max-width: 400px;
+}
+
+.modal__link {
+  color: #a7b6f7;
+  font-size: 20px;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s linear;
+  margin: 0 15px;
+
+  &:hover,
+  &.active {
+    border-color: #fff;
+    color: #fff;
+  }
+}
+
+.modal__input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: "Futura Futuris Regular";
+  color: $text;
+  padding-left: 15px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.modal__btn {
+  width: 100%;
+  border-color: #fff;
+  color: #fff;
+
+  &:hover {
+    border-color: $text;
+    color: $text;
+  }
+}
+
+.modal__footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.modal__forgot {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.modal__content__body {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.custom-checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #fff;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked + label::before {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.modal__checkbox__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.modal__warning__text {
+  margin-top: 35px;
+  margin-bottom: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+
+  img {
+    margin-bottom: 10px;
+  }
+
+  &--special {
+    flex-direction: row;
+    margin-bottom: 40px;
+    text-align: left;
+
+    img {
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+  }
+}
+
+.modal__btn__password {
+  margin-top: 20px;
+}
+
+.modal__warning__item {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+
+.modal__content__title {
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 50px;
 }
 
 // Fonts
