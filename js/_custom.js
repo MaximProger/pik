@@ -62,7 +62,7 @@ $(document).ready(function () {
   $(".contact__dots__wrapper").not(".slick-initialized").slick({
     arrows: false,
     slidesToShow: 3,
-    asNavFor: "#contactSlide",
+    asNavFor: "#contactSlider",
     focusOnSelect: true,
   });
 
@@ -177,8 +177,17 @@ $(document).ready(function () {
     $(this).addClass("active");
   });
 
-  $(".form__type__item").on("click", function () {
-    $(this).parent().find(".form__type__item").removeClass("active");
-    $(this).toggleClass("active");
+  // Селект с выбором файла
+  $(".form__type__item--current").on("click", function () {
+    $(this).parent().find(".form__type__list").addClass("active");
+  });
+
+  $(".form__type__item--list").on("click", function () {
+    $(this)
+      .parent()
+      .parent()
+      .find(".form__type__item--current")
+      .html($(this).html());
+    $(".form__type__list").removeClass("active");
   });
 });
