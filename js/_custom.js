@@ -173,7 +173,11 @@ $(document).ready(function () {
   // Section 6 add line
   $(".sectionAdd6").on("click", function (event) {
     event.preventDefault();
-    $(this).parent().parent().find(".form__section__line").removeClass("hide");
+    $(this)
+      .parent()
+      .parent()
+      .find(".form__contact__wrapper")
+      .removeClass("hide");
     $(this).addClass("active");
   });
 
@@ -190,4 +194,7 @@ $(document).ready(function () {
       .html($(this).html());
     $(".form__type__list").removeClass("active");
   });
+
+  // Masks
+  $(".phoneMask").mask("+7 (999) 999-9999");
 });

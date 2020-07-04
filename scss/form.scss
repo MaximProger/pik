@@ -515,10 +515,16 @@
   bottom: 0;
   left: 0;
   z-index: 10;
+  background: #fff;
+  border-radius: 5px;
 
   &.active {
     display: block;
   }
+}
+
+.form__contact__wrapper {
+  margin-top: 25px;
 }
 
 .hide {
